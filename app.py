@@ -32,10 +32,10 @@ def cylinder():
         radius = float(request.form['radius'])
         height = float(request.form['height'])
 
-        area1 = (2*pi*radius*height) + (2*pi*radius)
+        area1 = (2 * pi*  radius * height) + (2 * pi * radius)
         area = round(area1, 2)
 
-        volume1 = pi*(radius*radius)*height
+        volume1 = pi*(radius*  radius) * height
         volume = round(volume1, 2)
 
     return render_template("cylinder.html", area=area, volume=volume)
@@ -52,7 +52,7 @@ def cuboid():
         volume1 = length * width * height
         volume = round(volume1, 2)
 
-        area1= (2*(length*width)) + (2*(length*height)) + (2*(width*height))
+        area1= (2*(length * width)) + (2*(length * height)) + (2*(width*  height))
         area = round(area1, 2)
 
     return render_template("cuboid.html", area=area, volume=volume)
