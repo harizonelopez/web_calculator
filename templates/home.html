@@ -1,0 +1,99 @@
+{% extends "base.html" %} 
+{% block title %} Home page {% endblock %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web-app</title>
+    <style>
+        body {
+            display: flex;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #282c35;
+            color: #fff;
+            align-items: center;
+            flex-direction: column;
+            text-align: left;
+        }
+
+        header {
+            background-color: #1e2229;
+            text-align: center;
+            padding: 1em;
+        }
+
+        h1, h2 {
+            color: #61dafb;
+        }
+
+        h3,h5 {
+            line-height: 1.6;
+            color: #FF1493;
+        }
+
+        p, li, tr {
+            line-height: 1.6;
+            color: #a4acc4;
+        }
+
+        section {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #373c49;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }
+
+        footer {
+            background-color: #1e2229;
+            text-align: center;
+            padding: 0em 0;
+            position: fixed;
+            bottom: 0;
+            width: 65%;
+        }
+
+        a {
+            color: #00FF00;
+            text-decoration: none;
+        }
+
+        a:hover {
+            border-bottom: 2px solid #FF6347;
+        }
+
+    </style>
+</head>
+
+<body>
+    <section>
+       <header>Welcome to the web calculator app.</header>
+
+       <section>
+            <h3 align="center" >Choose The Operation You Wannah Do.</h3>
+            <section align="center">
+                <ol>
+                    <button type="submit" class="btn btn-primary"><a href="{{ url_for('rectangle') }}">Area & Perimeter of a Rectangle</a></button><br>
+                    <h1><button type="submit" class="btn btn-primary"><a href="{{ url_for('circle') }}">Area & Circumfference of a Circle</a></button><br>
+                    <h1><button type="submit" class="btn btn-primary"><a href="{{ url_for('cuboid') }}">Area & Volume of a Cube/Cuboid</a></button><br>
+                    <button type="submit" class="btn btn-primary"><a href="{{ url_for('cylinder') }}">Area & Volume of a cylinder(closed)</a></button>
+                </ol>
+                
+            </section>
+       </section>
+
+        <footer>
+            <p>&copy;2024 Dev_aladinh production.</p>
+        </footer>
+
+    </section>
+</body>
+</html>
+
+{% endblock %}
