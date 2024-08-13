@@ -1,7 +1,8 @@
 from flask import Flask, render_template, url_for, request
+from math import pi
 
 app = Flask(__name__)
-app.secret_key = 'aladinh00-01montext'
+app.secret_key = 'aladinh00-010montext'
 
 @app.route('/')
 def home():
@@ -60,18 +61,18 @@ def cuboid():
 @app.route('/circle', methods=['GET', 'POST'])
 def circle():
     area = 0.0
-    circumfference = 0.0
-    pi = 3.147
+    circumference = 0.0
     if request.method == 'POST':
-        radius = float(request.form['radius'])
+        try:
+            radius = float(request.form['radius'])
 
-        area1 = pi * radius * radius
-        area = round(area1, 2)
+            area = round(pi * radius ** 2, 2)
+            circumference = round(2 * pi * radius, 2)
+        except ValueError:
+            # Handling error
+            pass
 
-        circumfference1 = 2 * pi * radius 
-        circumfference = round(circumfference1, 2)
-
-    return render_template("circle.html", area=area, circumfference=circumfference)
+    return render_template("circle.html", area=area, circumference=circumference)
 
 if __name__ == "__main__":
     app.run(debug=True)
